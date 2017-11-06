@@ -1,9 +1,4 @@
-//var dbConnection = require('../../config/dbConnection');
-
-
-module.exports = function(application){
-   
-    ;
+module.exports = function(application){ 
 
     application.get('/noticias', function(req, res){
 
@@ -11,7 +6,7 @@ module.exports = function(application){
         var noticiasModel = application.app.models.noticiasModel;
 
 
-        noticiasModel.geNoticias(connection, function(error, result){
+        noticiasModel.getNoticias(connection, function(error, result){
             res.render("noticias/noticias", {noticias:result});
         
         });
